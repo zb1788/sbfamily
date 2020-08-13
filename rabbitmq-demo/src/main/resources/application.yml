@@ -1,0 +1,31 @@
+# \u5F00\u53D1\u73AF\u5883\u914D\u7F6E
+server:
+  # \u670D\u52A1\u7AEF\u53E3
+  port: 8111
+  servlet:
+    # \u9879\u76EEcontextPath
+    context-path: /rabbitmq
+  tomcat:
+    # tomcat\u7684URI\u7F16\u7801
+    uri-encoding: UTF-8
+    # tomcat\u6700\u5927\u7EBF\u7A0B\u6570\uFF0C\u9ED8\u8BA4\u4E3A200
+    max-threads: 800
+    # Tomcat\u542F\u52A8\u521D\u59CB\u5316\u7684\u7EBF\u7A0B\u6570\uFF0C\u9ED8\u8BA4\u503C25
+    min-spare-threads: 30
+
+
+
+
+############################################################
+#
+# RABBITMQ \u961F\u5217\u914D\u7F6E
+#
+############################################################
+spring:
+  rabbitmq:
+    host: 192.168.119.21
+    port: 5672
+    username: ilearn
+    password: yjt_ilearn2013
+    virtual-host: ilearn
+    connection-timeout: 15000

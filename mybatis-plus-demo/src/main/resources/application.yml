@@ -1,0 +1,57 @@
+# 开发环境配置
+server:
+  # 服务端口
+  port: 8765
+  servlet:
+    # 项目contextPath
+    context-path: /mybatistest
+  tomcat:
+    # tomcat的URI编码
+    uri-encoding: UTF-8
+    # tomcat最大线程数，默认为200
+    max-threads: 800
+    # Tomcat启动初始化的线程数，默认值25
+    min-spare-threads: 30
+
+
+# Spring配置
+spring:
+  # 服务模块
+  devtools:
+    restart:
+      # 热部署开关
+      enabled: true
+  datasource:
+    druid:
+      url: jdbc:mysql://192.168.151.126:3306/badmin?useUnicode=true&characterEncoding=utf-8&useAffectedRows=true&serverTimezone=UTC
+      username: root
+      password: 123456
+      db-type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+    #日期格式化
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+
+# ************************ logback日志配置 ************************
+# 日志配置文件
+logging:
+  config: classpath:logback-spring.xml
+
+log:
+  # 日志级别
+  level: debug
+  # 日志目录
+  path: E://var//log//zzvcom//basicdemo
+  # 日志文件名称
+  name: basicdemo
+
+mybatis-plus:
+  #XML
+  #mapper-locations: classpath:mapper/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分割
+  #type-aliases-package: com.boz.bdmin.project.sys.user.entity
+  configuration:
+    #这个配置会将sql答应出来，在开发或者测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
